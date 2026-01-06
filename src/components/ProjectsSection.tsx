@@ -1,12 +1,30 @@
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 
+const glowColors = [
+  "hover:shadow-[0_0_30px_rgba(139,92,246,0.3)]", // purple
+  "hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]",  // cyan
+  "hover:shadow-[0_0_30px_rgba(236,72,153,0.3)]", // pink
+  "hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]",  // green
+  "hover:shadow-[0_0_30px_rgba(249,115,22,0.3)]", // orange
+  "hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]", // blue
+];
+
+const borderColors = [
+  "hover:border-violet-500/50",
+  "hover:border-cyan-500/50",
+  "hover:border-pink-500/50",
+  "hover:border-green-500/50",
+  "hover:border-orange-500/50",
+  "hover:border-blue-500/50",
+];
+
 const projects = [
   {
-    title: "Hand Gesture Recognition System",
+    title: "ASL Gesture Recognition System",
     description: "Real-time ASL gesture recognition using TensorFlow/Keras for CNN training, OpenCV for image processing, and MediaPipe for hand landmark detection.",
     tags: ["TensorFlow", "OpenCV", "MediaPipe", "Deep Learning"],
-    github: "https://github.com/Aviral1104/Hand-Gesture-Recognition",
+    github: "https://github.com/Aviral1104/ASL-Gesture-Recognition-System",
   },
   {
     title: "Reinforcement Learning in Action",
@@ -25,13 +43,13 @@ const projects = [
     title: "DAWG: Stray Dog Detection",
     description: "Enhanced YOLOv7 algorithm to detect stray dogs and relay information to the nearest Municipal Corporation for animal welfare management.",
     tags: ["YOLOv7", "Computer Vision", "Python"],
-    github: "#",
+    github: "https://github.com/Aviral1104",
   },
   {
     title: "Alzheimer's Detection using CNN",
     description: "Convolutional Neural Networks to detect Alzheimer's from brain X-rays, achieving high accuracy in early diagnosis for medical applications.",
     tags: ["CNN", "Medical AI", "TensorFlow"],
-    github: "#",
+    github: "https://github.com/Aviral1104",
   },
   {
     title: "Applied Machine Learning",
@@ -63,9 +81,10 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group p-6 rounded-xl bg-card border border-border card-glow hover-lift"
+              className={`group p-6 rounded-xl bg-card border border-border transition-all duration-500 hover:-translate-y-2 ${glowColors[index % glowColors.length]} ${borderColors[index % borderColors.length]}`}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="font-display text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+              <h3 className="font-display text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                 {project.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -78,7 +97,7 @@ const ProjectsSection = () => {
                   <Badge
                     key={i}
                     variant="secondary"
-                    className="text-xs font-mono bg-secondary/50 text-muted-foreground border border-border"
+                    className="text-xs font-mono bg-secondary/50 text-muted-foreground border border-border transition-all duration-300 hover:bg-primary/20 hover:text-primary"
                   >
                     {tag}
                   </Badge>
@@ -91,7 +110,7 @@ const ProjectsSection = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors"
+                  className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-all duration-300 hover:gap-3"
                 >
                   <Github className="w-4 h-4" />
                   Code
@@ -101,7 +120,7 @@ const ProjectsSection = () => {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors"
+                    className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-all duration-300 hover:gap-3"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Demo
