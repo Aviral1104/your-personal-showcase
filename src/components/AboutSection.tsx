@@ -30,16 +30,16 @@ const AboutSection = () => {
 
           {/* Stats */}
           <div className="mt-12 grid grid-cols-3 gap-8">
-            <div>
-              <p className="font-display text-3xl font-bold text-primary text-glow-cyan">8.6</p>
+            <div className="group">
+              <p className="font-display text-3xl font-bold text-primary text-glow-cyan group-hover:scale-110 transition-transform duration-300">8.6</p>
               <p className="text-sm text-muted-foreground mt-1">GPA / 10</p>
             </div>
-            <div>
-              <p className="font-display text-3xl font-bold text-accent text-glow-purple">6+</p>
-              <p className="text-sm text-muted-foreground mt-1">ML Projects</p>
+            <div className="group">
+              <p className="font-display text-3xl font-bold text-accent text-glow-purple group-hover:scale-110 transition-transform duration-300">20+</p>
+              <p className="text-sm text-muted-foreground mt-1">Projects</p>
             </div>
-            <div>
-              <p className="font-display text-3xl font-bold text-primary text-glow-cyan">4</p>
+            <div className="group">
+              <p className="font-display text-3xl font-bold text-primary text-glow-cyan group-hover:scale-110 transition-transform duration-300">10+</p>
               <p className="text-sm text-muted-foreground mt-1">Certifications</p>
             </div>
           </div>

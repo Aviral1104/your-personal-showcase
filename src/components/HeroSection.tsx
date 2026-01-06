@@ -17,7 +17,7 @@ const HeroSection = () => {
         <div className="max-w-4xl">
           {/* Name with Glow */}
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up">
-            <span className="text-gradient-cyan-purple text-glow-cyan">Aviral Asthana</span>
+            <span className="text-gradient-cyan-purple opacity-90">Aviral Asthana</span>
           </h1>
 
           {/* Description */}
