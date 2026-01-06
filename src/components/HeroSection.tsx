@@ -8,9 +8,11 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-      <div className="absolute inset-0 bg-gradient-glow" />
+      {/* Layered Background Effects */}
+      <div className="absolute inset-0 bg-mesh-gradient" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+      <div className="absolute inset-0 bg-noise" />
+      <div className="absolute inset-0 bg-gradient-glow animate-shimmer" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20">
@@ -92,8 +94,10 @@ const HeroSection = () => {
       </div>
 
       {/* Decorative Glow Orbs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-accent/5 blur-[100px] animate-float" />
-      <div className="absolute bottom-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/5 blur-[80px] animate-float" style={{ animationDelay: "-3s" }} />
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px] animate-drift" />
+      <div className="absolute bottom-1/3 left-1/6 w-[400px] h-[400px] rounded-full bg-primary/6 blur-[100px] animate-float" style={{ animationDelay: "-4s" }} />
+      <div className="absolute top-1/2 right-1/6 w-[300px] h-[300px] rounded-full bg-[hsl(var(--glow-pink))]/5 blur-[80px] animate-drift" style={{ animationDelay: "-8s" }} />
+      <div className="absolute bottom-1/4 right-1/3 w-[250px] h-[250px] rounded-full bg-primary/4 blur-[60px] animate-float" style={{ animationDelay: "-2s" }} />
     </section>
   );
 };
