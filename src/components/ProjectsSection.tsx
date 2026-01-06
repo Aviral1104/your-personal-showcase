@@ -1,86 +1,110 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Bot, Brain, Dog, Apple, Hand } from "lucide-react";
 
 const projects = [
   {
     icon: Dog,
-    title: "DAWG: Stray Dog Detection System",
-    description: "Implemented an enhanced YOLOv7 algorithm to detect stray dogs and relay information to the nearest Municipal Corporation for animal welfare management.",
-    tags: ["YOLOv7", "Computer Vision", "Python", "Object Detection"],
-  },
-  {
-    icon: Bot,
-    title: "AI-Based Career Counsellor",
-    description: "Developed an AI model to suggest personalized career options based on user responses and preferences using machine learning algorithms.",
-    tags: ["Machine Learning", "Python", "AI", "Recommendation System"],
+    title: "DAWG",
+    subtitle: "Stray Dog Detection System",
+    description: "Enhanced YOLOv7 algorithm to detect stray dogs and relay information to Municipal Corporations.",
+    tags: ["YOLOV7", "COMPUTER VISION", "2024"],
+    gradient: "card-gradient-teal",
   },
   {
     icon: Brain,
-    title: "Alzheimer's Detection using CNN",
-    description: "Utilized Convolutional Neural Networks to detect Alzheimer's from brain X-rays, achieving high accuracy in early diagnosis for medical applications.",
-    tags: ["CNN", "Deep Learning", "Medical AI", "TensorFlow"],
+    title: "Alzheimer's Detection",
+    subtitle: "CNN-based Diagnosis",
+    description: "Convolutional Neural Networks to detect Alzheimer's from brain X-rays with high accuracy.",
+    tags: ["CNN", "MEDICAL AI", "DEEP LEARNING"],
+    gradient: "card-gradient-purple",
+  },
+  {
+    icon: Bot,
+    title: "AI Career Counsellor",
+    subtitle: "Personalized Guidance",
+    description: "AI model suggesting personalized career options based on user responses and preferences.",
+    tags: ["MACHINE LEARNING", "AI", "PYTHON"],
+    gradient: "card-gradient-pink",
   },
   {
     icon: Apple,
-    title: "FRUITIPEDIA: Automated Fruit Grading",
-    description: "Engineered an automated fruit grading system using CNNs and created a comprehensive encyclopedia for various fruit classes and varieties.",
-    tags: ["CNN", "Image Classification", "Python", "Agriculture Tech"],
+    title: "FRUITIPEDIA",
+    subtitle: "Automated Fruit Grading",
+    description: "Automated fruit grading system using CNNs with comprehensive fruit encyclopedia.",
+    tags: ["CNN", "AGRICULTURE", "CLASSIFICATION"],
+    gradient: "card-gradient-orange",
   },
   {
     icon: Hand,
-    title: "ASL Gesture Recognition System",
-    description: "Developed a real-time American Sign Language gesture recognition system using TensorFlow/Keras, OpenCV, and MediaPipe for hand landmark detection.",
-    tags: ["TensorFlow", "OpenCV", "MediaPipe", "Real-time AI"],
+    title: "ASL Recognition",
+    subtitle: "Gesture Detection System",
+    description: "Real-time American Sign Language gesture recognition using TensorFlow and MediaPipe.",
+    tags: ["TENSORFLOW", "OPENCV", "REAL-TIME"],
+    gradient: "card-gradient-blue",
   },
 ];
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 bg-card">
+    <section id="projects" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
-            Featured Projects
+        {/* Section Header */}
+        <div className="mb-16">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Featured Work
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            A collection of AI/ML projects demonstrating expertise in computer vision, 
-            deep learning, and real-world problem solving.
+          <p className="text-muted-foreground max-w-xl">
+            AI/ML projects demonstrating expertise in computer vision, deep learning, and real-world problem solving.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Projects Grid - Bento Style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <Card 
-              key={index} 
-              className="group hover:shadow-xl transition-all duration-300 bg-background border-border/50 hover:-translate-y-1"
+            <div
+              key={index}
+              className={`group relative rounded-3xl p-8 ${project.gradient} hover-lift cursor-pointer overflow-hidden ${
+                index === 0 ? "md:col-span-2 md:row-span-1" : ""
+              }`}
             >
-              <CardHeader>
-                <div className="p-3 rounded-lg bg-accent w-fit mb-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <project.icon className="w-6 h-6" />
+              {/* Floating Icon */}
+              <div className="absolute top-6 right-6 p-4 rounded-2xl bg-background/10 backdrop-blur-sm">
+                <project.icon className="w-8 h-8 text-background/90" />
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 h-full flex flex-col justify-end min-h-[280px]">
+                <div className="space-y-3">
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-xs font-mono font-medium bg-background/20 backdrop-blur-sm rounded-full text-background/90"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="font-display text-2xl md:text-3xl font-bold text-background">
+                    {project.title}
+                  </h3>
+                  <p className="text-background/80 text-sm font-medium">
+                    {project.subtitle}
+                  </p>
+
+                  {/* Description */}
+                  <p className="text-background/70 text-sm leading-relaxed max-w-md">
+                    {project.description}
+                  </p>
                 </div>
-                <CardTitle className="text-lg font-semibold text-foreground">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground mb-4 leading-relaxed">
-                  {project.description}
-                </CardDescription>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <Badge 
-                      key={tagIndex} 
-                      variant="outline" 
-                      className="text-xs font-normal"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-background/5 pointer-events-none" />
+              <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-background/5 pointer-events-none" />
+            </div>
           ))}
         </div>
       </div>

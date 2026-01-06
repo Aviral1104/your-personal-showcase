@@ -1,86 +1,75 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, ArrowUpRight } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 bg-card">
+    <section id="contact" className="py-24 bg-card border-t border-border">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
-            Get In Touch
-          </h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, collaborations, 
-            or just having a chat about AI and technology.
-          </p>
-        </div>
-
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <Card className="text-center hover:shadow-lg transition-all duration-300 bg-background border-border/50">
-              <CardContent className="p-6">
-                <div className="inline-flex p-4 rounded-full bg-accent mb-4">
-                  <Mail className="w-6 h-6 text-accent-foreground" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Email</h3>
-                <p className="text-muted-foreground text-sm">Available for emails</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-all duration-300 bg-background border-border/50">
-              <CardContent className="p-6">
-                <div className="inline-flex p-4 rounded-full bg-accent mb-4">
-                  <Phone className="w-6 h-6 text-accent-foreground" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Phone</h3>
-                <p className="text-muted-foreground text-sm">+91 8528830902</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-all duration-300 bg-background border-border/50">
-              <CardContent className="p-6">
-                <div className="inline-flex p-4 rounded-full bg-accent mb-4">
-                  <MapPin className="w-6 h-6 text-accent-foreground" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Location</h3>
-                <p className="text-muted-foreground text-sm">Lucknow, India</p>
-              </CardContent>
-            </Card>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4">
+              Let's Connect
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+              I'm always open to discussing new opportunities, collaborations, or just chatting about AI and technology.
+            </p>
           </div>
 
-          {/* Social Connect */}
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-foreground mb-6">Connect With Me</h3>
-            <div className="flex items-center justify-center gap-4">
-              <a
-                href="https://linkedin.com/in/aviral-asthana-4393b4234"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outline" size="lg" className="gap-2">
-                  <Linkedin className="w-5 h-5" />
-                  LinkedIn
-                </Button>
-              </a>
-              <a
-                href="https://twitter.com/actual_aviral"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outline" size="lg" className="gap-2">
-                  <Twitter className="w-5 h-5" />
-                  Twitter
-                </Button>
-              </a>
-              <a href="mailto:contact@aviralashtana.com">
-                <Button size="lg" className="gap-2">
-                  <Send className="w-5 h-5" />
-                  Send Message
-                </Button>
-              </a>
+          {/* Contact Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+            <a
+              href="mailto:asthana.aviral0902@gmail.com"
+              className="group p-6 rounded-2xl bg-background border border-border hover:border-primary/50 transition-all duration-300"
+            >
+              <Mail className="w-6 h-6 text-primary mb-4" />
+              <p className="font-semibold text-foreground text-sm mb-1">Email</p>
+              <p className="text-muted-foreground text-xs break-all">asthana.aviral0902@gmail.com</p>
+            </a>
+
+            <div className="p-6 rounded-2xl bg-background border border-border">
+              <Phone className="w-6 h-6 text-primary mb-4" />
+              <p className="font-semibold text-foreground text-sm mb-1">Phone</p>
+              <p className="text-muted-foreground text-xs">+91 8528830902</p>
             </div>
+
+            <div className="p-6 rounded-2xl bg-background border border-border">
+              <MapPin className="w-6 h-6 text-primary mb-4" />
+              <p className="font-semibold text-foreground text-sm mb-1">Location</p>
+              <p className="text-muted-foreground text-xs">Lucknow, India</p>
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://linkedin.com/in/aviral-asthana-4393b4234"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="lg" className="rounded-full gap-2 group">
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+                <ArrowUpRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+              </Button>
+            </a>
+            <a
+              href="https://twitter.com/actual_aviral"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="lg" className="rounded-full gap-2 group">
+                <Twitter className="w-4 h-4" />
+                @actual_aviral
+                <ArrowUpRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+              </Button>
+            </a>
+            <a href="mailto:asthana.aviral0902@gmail.com">
+              <Button size="lg" className="rounded-full gap-2">
+                <Mail className="w-4 h-4" />
+                Send Email
+              </Button>
+            </a>
           </div>
         </div>
       </div>
