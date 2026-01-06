@@ -1,21 +1,36 @@
-import { Briefcase, GraduationCap, PenLine, Award } from "lucide-react";
+import { Award } from "lucide-react";
 
 const experiences = [
   {
-    type: "work",
-    icon: Briefcase,
-    title: "Project Trainee",
-    organization: "Trinetradhar Info Solution Pvt. Ltd.",
-    period: "Nov 2023 - Jan 2024",
-    description: "Designed and implemented database for UP Prosecution Department e-Reporting System. Conducted testing and performance tuning.",
+    period: "2021 — 2025",
+    title: "Machine Learning Engineer (Student)",
+    organization: "VIT Bhopal · Independent Projects",
+    description: [
+      "Designed and implemented end-to-end machine learning systems across Computer Vision and Reinforcement Learning.",
+      "Built real-time pipelines for hand gesture recognition, object detection, and control-based environments.",
+      "Focused on robustness, inference speed, and real-world deployment constraints.",
+    ],
+    tags: ["Python", "TensorFlow", "PyTorch", "YOLOv8", "OpenCV", "Gym"],
   },
   {
-    type: "work",
-    icon: PenLine,
-    title: "Author",
-    organization: "Medium",
-    period: "Aug 2022 - Present",
-    description: "Writing articles on Science and Cosmos with data visualization for complex scientific concepts.",
+    period: "2022 — Present",
+    title: "Applied AI Research & Experimentation",
+    organization: "Self-Driven",
+    description: [
+      "Experimented with CNNs, RL agents, and optimization strategies across multiple environments.",
+      "Documented learnings through articles and open-source implementations.",
+    ],
+    tags: ["Research", "Deep Learning", "RL", "Writing"],
+  },
+  {
+    period: "Nov 2023 — Jan 2024",
+    title: "Project Trainee",
+    organization: "Trinetradhar Info Solution Pvt. Ltd.",
+    description: [
+      "Designed and implemented database for UP Prosecution Department e-Reporting System.",
+      "Conducted testing and performance tuning for system reliability.",
+    ],
+    tags: ["Database Design", "SQL", "Testing"],
   },
 ];
 
@@ -28,58 +43,66 @@ const certifications = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-24 bg-background">
+    <section id="experience" className="py-24 bg-card/30 border-y border-border relative">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Left - Experience & Education */}
+          {/* Experience */}
           <div>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-10">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-12">
               Experience
             </h2>
 
-            {/* Timeline */}
-            <div className="space-y-8">
+            <div className="space-y-10">
               {experiences.map((exp, index) => (
-                <div key={index} className="relative pl-8 border-l-2 border-border">
-                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary" />
-                  <p className="font-mono text-xs text-muted-foreground mb-1">{exp.period}</p>
-                  <h3 className="font-display text-xl font-semibold text-foreground">{exp.title}</h3>
-                  <p className="text-primary font-medium text-sm mb-2">{exp.organization}</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{exp.description}</p>
+                <div key={index} className="relative pl-6 border-l border-border">
+                  <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-primary border-glow-cyan" />
+                  <p className="font-mono text-xs text-muted-foreground mb-2">{exp.period}</p>
+                  <h3 className="font-display text-lg font-semibold text-foreground">{exp.title}</h3>
+                  <p className="text-primary text-sm mb-3">{exp.organization}</p>
+                  <ul className="space-y-2 mb-4">
+                    {exp.description.map((item, i) => (
+                      <li key={i} className="text-muted-foreground text-sm leading-relaxed">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-1 text-xs font-mono bg-secondary/50 text-muted-foreground rounded border border-border"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
-
-              {/* Education */}
-              <div className="relative pl-8 border-l-2 border-border">
-                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent-foreground" />
-                <p className="font-mono text-xs text-muted-foreground mb-1">Aug 2021 - Jul 2025</p>
-                <h3 className="font-display text-xl font-semibold text-foreground">B.Tech Computer Science</h3>
-                <p className="text-accent-foreground font-medium text-sm mb-2">Vellore Institute of Technology</p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Specialization in AI & ML. GPA: 8.6/10. Coursework includes Deep Learning, NLP, Computer Vision.
-                </p>
-              </div>
             </div>
           </div>
 
-          {/* Right - Certifications */}
+          {/* Certifications */}
           <div>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-10">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-12">
               Certifications
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-4">
               {certifications.map((cert, index) => (
                 <div
                   key={index}
-                  className="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-md transition-all duration-300"
+                  className="p-5 rounded-xl bg-card border border-border card-glow"
                 >
-                  <div className="p-2 rounded-xl bg-accent w-fit mb-4">
-                    <Award className="w-5 h-5 text-accent-foreground" />
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-lg bg-secondary/50">
+                      <Award className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground text-sm">{cert.title}</h3>
+                      <p className="text-primary text-xs">{cert.org}</p>
+                      <p className="text-muted-foreground text-xs font-mono mt-1">{cert.year}</p>
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-foreground text-sm mb-1">{cert.title}</h3>
-                  <p className="text-primary text-xs font-medium">{cert.org}</p>
-                  <p className="text-muted-foreground text-xs font-mono mt-2">{cert.year}</p>
                 </div>
               ))}
             </div>

@@ -1,4 +1,5 @@
 import { Github, Linkedin, Twitter, Mail, ArrowDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -6,37 +7,48 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center grid-pattern overflow-hidden">
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/50 to-background pointer-events-none" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+      <div className="absolute inset-0 bg-gradient-glow" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Avatar/Logo */}
-          <div className="mb-8 flex justify-center">
-            <div className="w-20 h-20 rounded-2xl bg-foreground flex items-center justify-center text-background font-display text-2xl font-bold shadow-lg">
-              AA
-            </div>
-          </div>
-
-          {/* Name - Large Display Typography */}
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-foreground mb-6 uppercase">
-            Aviral Asthana
+        <div className="max-w-4xl">
+          {/* Name with Glow */}
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up">
+            <span className="text-gradient-cyan-purple text-glow-cyan">Aviral Asthana</span>
           </h1>
 
-          {/* Tagline */}
-          <p className="font-mono text-sm md:text-base text-muted-foreground tracking-widest uppercase mb-12">
-            Machine Learning Engineer Building Intelligent Systems
+          {/* Description */}
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+            I develop machine learning systems that prioritise robustness, latency and real-world performance over benchmark scores.
           </p>
 
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 mb-12 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <Button
+              onClick={() => scrollToSection("projects")}
+              className="px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 border-glow-cyan"
+            >
+              Selected Work
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => scrollToSection("contact")}
+              className="px-6 py-3 text-muted-foreground hover:text-foreground"
+            >
+              Get in touch
+            </Button>
+          </div>
+
           {/* Social Links */}
-          <div className="flex items-center justify-center gap-3 mb-16">
+          <div className="flex items-center gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <a
               href="https://linkedin.com/in/aviral-asthana-4393b4234"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-card border border-border hover:bg-secondary hover:border-foreground/20 transition-all duration-300"
+              className="p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
@@ -45,23 +57,23 @@ const HeroSection = () => {
               href="https://twitter.com/actual_aviral"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-card border border-border hover:bg-secondary hover:border-foreground/20 transition-all duration-300"
+              className="p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
               aria-label="Twitter"
             >
               <Twitter className="w-5 h-5" />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/Aviral1104"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-card border border-border hover:bg-secondary hover:border-foreground/20 transition-all duration-300"
+              className="p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
             </a>
             <a
               href="mailto:asthana.aviral0902@gmail.com"
-              className="p-3 rounded-xl bg-card border border-border hover:bg-secondary hover:border-foreground/20 transition-all duration-300"
+              className="p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />
@@ -71,13 +83,17 @@ const HeroSection = () => {
 
         {/* Scroll Indicator */}
         <button
-          onClick={() => scrollToSection("projects")}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2 rounded-full border border-border bg-card hover:bg-secondary transition-all duration-300 animate-bounce"
-          aria-label="Scroll to projects"
+          onClick={() => scrollToSection("about")}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2 text-muted-foreground hover:text-primary transition-colors duration-300 animate-bounce"
+          aria-label="Scroll down"
         >
-          <ArrowDown className="w-5 h-5 text-muted-foreground" />
+          <ArrowDown className="w-5 h-5" />
         </button>
       </div>
+
+      {/* Decorative Glow Orbs */}
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-accent/5 blur-[100px] animate-float" />
+      <div className="absolute bottom-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/5 blur-[80px] animate-float" style={{ animationDelay: "-3s" }} />
     </section>
   );
 };
