@@ -1,43 +1,40 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Twitter, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowUpRight } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 bg-card border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4">
-              Let's Connect
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-              I'm always open to discussing new opportunities, collaborations, or just chatting about AI and technology.
-            </p>
-          </div>
+    <section id="contact" className="py-24 bg-background relative">
+      {/* Background Glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 blur-[150px] rounded-full" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-accent/5 blur-[120px] rounded-full" />
 
-          {/* Contact Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Header */}
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
+            Let's Connect
+          </h2>
+          <p className="text-muted-foreground text-lg mb-12 max-w-xl mx-auto">
+            Open to opportunities, collaborations, and thoughtful conversations around AI, systems, and long-term thinking.
+          </p>
+
+          {/* Contact Info */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-12 text-sm">
             <a
               href="mailto:asthana.aviral0902@gmail.com"
-              className="group p-6 rounded-2xl bg-background border border-border hover:border-primary/50 transition-all duration-300"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
-              <Mail className="w-6 h-6 text-primary mb-4" />
-              <p className="font-semibold text-foreground text-sm mb-1">Email</p>
-              <p className="text-muted-foreground text-xs break-all">asthana.aviral0902@gmail.com</p>
+              <Mail className="w-4 h-4" />
+              asthana.aviral0902@gmail.com
             </a>
-
-            <div className="p-6 rounded-2xl bg-background border border-border">
-              <Phone className="w-6 h-6 text-primary mb-4" />
-              <p className="font-semibold text-foreground text-sm mb-1">Phone</p>
-              <p className="text-muted-foreground text-xs">+91 8528830902</p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-background border border-border">
-              <MapPin className="w-6 h-6 text-primary mb-4" />
-              <p className="font-semibold text-foreground text-sm mb-1">Location</p>
-              <p className="text-muted-foreground text-xs">Lucknow, India</p>
-            </div>
+            <span className="flex items-center gap-2 text-muted-foreground">
+              <Phone className="w-4 h-4" />
+              +91 8528830902
+            </span>
+            <span className="flex items-center gap-2 text-muted-foreground">
+              <MapPin className="w-4 h-4" />
+              Lucknow, India
+            </span>
           </div>
 
           {/* Social Links */}
@@ -47,7 +44,10 @@ const ContactSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" size="lg" className="rounded-full gap-2 group">
+              <Button
+                variant="outline"
+                className="gap-2 border-border hover:border-primary hover:text-primary transition-all group"
+              >
                 <Linkedin className="w-4 h-4" />
                 LinkedIn
                 <ArrowUpRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
@@ -58,14 +58,31 @@ const ContactSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" size="lg" className="rounded-full gap-2 group">
+              <Button
+                variant="outline"
+                className="gap-2 border-border hover:border-primary hover:text-primary transition-all group"
+              >
                 <Twitter className="w-4 h-4" />
                 @actual_aviral
                 <ArrowUpRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
               </Button>
             </a>
+            <a
+              href="https://github.com/Aviral1104"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                className="gap-2 border-border hover:border-primary hover:text-primary transition-all group"
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+                <ArrowUpRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+              </Button>
+            </a>
             <a href="mailto:asthana.aviral0902@gmail.com">
-              <Button size="lg" className="rounded-full gap-2">
+              <Button className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 border-glow-cyan">
                 <Mail className="w-4 h-4" />
                 Send Email
               </Button>

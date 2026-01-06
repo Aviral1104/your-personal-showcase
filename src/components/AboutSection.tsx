@@ -1,87 +1,47 @@
-import { Badge } from "@/components/ui/badge";
-
-const skillCategories = [
-  {
-    title: "AI & Machine Learning",
-    skills: ["Machine Learning", "Deep Learning", "Computer Vision", "NLP", "TensorFlow", "PyTorch"],
-  },
-  {
-    title: "Development",
-    skills: ["Python", "SQL", "Front-End Development", "API Design"],
-  },
-  {
-    title: "Cloud & DevOps",
-    skills: ["AWS", "Cloud Computing", "Cloud Native Apps", "DevOps Automation"],
-  },
-  {
-    title: "Data",
-    skills: ["Database Management", "ETL", "Data Modeling", "Data Visualization"],
-  },
-];
-
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-card border-y border-border">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left - About Text */}
-          <div>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              About
-            </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                Machine Learning Engineer with a strong foundation in AI and deep learning,
-                experienced in shipping Python-based solutions to production.
-              </p>
-              <p>
-                Currently pursuing B.Tech in Computer Science with specialization in AI/ML
-                at Vellore Institute of Technology with a GPA of 8.6/10.
-              </p>
-              <p>
-                AWS Certified Cloud Practitioner with hands-on experience in computer vision,
-                NLP, and cloud-native development. I love building intelligent systems that
-                solve real-world problems.
-              </p>
-            </div>
+    <section id="about" className="py-24 bg-card/50 border-y border-border relative">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/5 blur-[120px] rounded-full" />
 
-            {/* Quick Stats */}
-            <div className="mt-10 grid grid-cols-3 gap-6">
-              <div>
-                <p className="font-display text-3xl font-bold text-foreground">8.6</p>
-                <p className="text-sm text-muted-foreground">GPA / 10</p>
-              </div>
-              <div>
-                <p className="font-display text-3xl font-bold text-foreground">5+</p>
-                <p className="text-sm text-muted-foreground">Projects</p>
-              </div>
-              <div>
-                <p className="font-display text-3xl font-bold text-foreground">4</p>
-                <p className="text-sm text-muted-foreground">Certifications</p>
-              </div>
-            </div>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-3xl">
+          {/* Quote */}
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8 leading-relaxed">
+            I care about systems that survive reality{" "}
+            <span className="text-muted-foreground">— not demos that survive notebooks.</span>
+          </h2>
+
+          {/* Description */}
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              I'm a B.Tech student in <span className="text-primary">Artificial Intelligence</span> at VIT Bhopal, 
+              focused on building machine learning systems that remain reliable under real-world constraints.
+            </p>
+            <p>
+              My work spans <span className="text-foreground">computer vision</span>, <span className="text-foreground">reinforcement learning</span>, 
+              and system-level thinking — where latency, stability, and scale matter as much as accuracy.
+            </p>
+            <p>
+              Outside engineering, I write about science, philosophy, and long-term business thinking. 
+              I'm inspired by founders who optimize for decades, not quarters.
+            </p>
           </div>
 
-          {/* Right - Skills */}
-          <div className="space-y-8">
-            {skillCategories.map((category, index) => (
-              <div key={index}>
-                <h3 className="font-display text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
-                  {category.title}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, i) => (
-                    <Badge
-                      key={i}
-                      variant="secondary"
-                      className="px-4 py-2 text-sm font-normal rounded-full"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            ))}
+          {/* Stats */}
+          <div className="mt-12 grid grid-cols-3 gap-8">
+            <div>
+              <p className="font-display text-3xl font-bold text-primary text-glow-cyan">8.6</p>
+              <p className="text-sm text-muted-foreground mt-1">GPA / 10</p>
+            </div>
+            <div>
+              <p className="font-display text-3xl font-bold text-accent text-glow-purple">6+</p>
+              <p className="text-sm text-muted-foreground mt-1">ML Projects</p>
+            </div>
+            <div>
+              <p className="font-display text-3xl font-bold text-primary text-glow-cyan">4</p>
+              <p className="text-sm text-muted-foreground mt-1">Certifications</p>
+            </div>
           </div>
         </div>
       </div>

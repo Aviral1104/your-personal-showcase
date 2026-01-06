@@ -1,109 +1,113 @@
-import { Bot, Brain, Dog, Apple, Hand } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    icon: Dog,
-    title: "DAWG",
-    subtitle: "Stray Dog Detection System",
-    description: "Enhanced YOLOv7 algorithm to detect stray dogs and relay information to Municipal Corporations.",
-    tags: ["YOLOV7", "COMPUTER VISION", "2024"],
-    gradient: "card-gradient-teal",
+    title: "Hand Gesture Recognition System",
+    description: "Real-time ASL gesture recognition using TensorFlow/Keras for CNN training, OpenCV for image processing, and MediaPipe for hand landmark detection.",
+    tags: ["TensorFlow", "OpenCV", "MediaPipe", "Deep Learning"],
+    github: "https://github.com/Aviral1104/Hand-Gesture-Recognition",
   },
   {
-    icon: Brain,
-    title: "Alzheimer's Detection",
-    subtitle: "CNN-based Diagnosis",
-    description: "Convolutional Neural Networks to detect Alzheimer's from brain X-rays with high accuracy.",
-    tags: ["CNN", "MEDICAL AI", "DEEP LEARNING"],
-    gradient: "card-gradient-purple",
+    title: "Reinforcement Learning in Action",
+    description: "Task-based implementations of reinforcement learning algorithms ranging from classical methods to modern actor-critic architectures like DDPG and TD3.",
+    tags: ["Reinforcement Learning", "DDPG", "TD3", "Gym"],
+    github: "https://github.com/Aviral1104/Reinforcement-Learning-in-Action-Task-Based-Approaches",
   },
   {
-    icon: Bot,
-    title: "AI Career Counsellor",
-    subtitle: "Personalized Guidance",
-    description: "AI model suggesting personalized career options based on user responses and preferences.",
-    tags: ["MACHINE LEARNING", "AI", "PYTHON"],
-    gradient: "card-gradient-pink",
+    title: "Cricket Field Object Detection",
+    description: "YOLOv8-based object detection system for cricket analytics. Detects pitch, ball, and bat from match footage with real-time inference.",
+    tags: ["YOLOv8", "Computer Vision", "ONNX", "OpenCV"],
+    github: "https://github.com/Aviral1104/Cricket-field-Object-Detection",
+    demo: "https://drive.google.com/file/d/12hs2Fy9Sbx0MWycYCgU-UotIZaP0p5-c/view",
   },
   {
-    icon: Apple,
-    title: "FRUITIPEDIA",
-    subtitle: "Automated Fruit Grading",
-    description: "Automated fruit grading system using CNNs with comprehensive fruit encyclopedia.",
-    tags: ["CNN", "AGRICULTURE", "CLASSIFICATION"],
-    gradient: "card-gradient-orange",
+    title: "DAWG: Stray Dog Detection",
+    description: "Enhanced YOLOv7 algorithm to detect stray dogs and relay information to the nearest Municipal Corporation for animal welfare management.",
+    tags: ["YOLOv7", "Computer Vision", "Python"],
+    github: "#",
   },
   {
-    icon: Hand,
-    title: "ASL Recognition",
-    subtitle: "Gesture Detection System",
-    description: "Real-time American Sign Language gesture recognition using TensorFlow and MediaPipe.",
-    tags: ["TENSORFLOW", "OPENCV", "REAL-TIME"],
-    gradient: "card-gradient-blue",
+    title: "Alzheimer's Detection using CNN",
+    description: "Convolutional Neural Networks to detect Alzheimer's from brain X-rays, achieving high accuracy in early diagnosis for medical applications.",
+    tags: ["CNN", "Medical AI", "TensorFlow"],
+    github: "#",
+  },
+  {
+    title: "Applied Machine Learning",
+    description: "In-depth notebooks exploring applied machine learning techniques with mathematical intuition and implementation details.",
+    tags: ["Machine Learning", "Jupyter", "Python"],
+    github: "https://github.com/Aviral1104/Applied-Machine-Learning",
   },
 ];
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-24 bg-background relative">
+      {/* Background */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+
+      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Featured Work
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Selected Work
           </h2>
           <p className="text-muted-foreground max-w-xl">
-            AI/ML projects demonstrating expertise in computer vision, deep learning, and real-world problem solving.
+            Projects focused on robustness, inference speed, and real-world deployment constraints.
           </p>
         </div>
 
-        {/* Projects Grid - Bento Style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group relative rounded-3xl p-8 ${project.gradient} hover-lift cursor-pointer overflow-hidden ${
-                index === 0 ? "md:col-span-2 md:row-span-1" : ""
-              }`}
+              className="group p-6 rounded-xl bg-card border border-border card-glow hover-lift"
             >
-              {/* Floating Icon */}
-              <div className="absolute top-6 right-6 p-4 rounded-2xl bg-background/10 backdrop-blur-sm">
-                <project.icon className="w-8 h-8 text-background/90" />
+              <h3 className="font-display text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                {project.description}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tags.map((tag, i) => (
+                  <Badge
+                    key={i}
+                    variant="secondary"
+                    className="text-xs font-mono bg-secondary/50 text-muted-foreground border border-border"
+                  >
+                    {tag}
+                  </Badge>
+                ))}
               </div>
 
-              {/* Content */}
-              <div className="relative z-10 h-full flex flex-col justify-end min-h-[280px]">
-                <div className="space-y-3">
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 text-xs font-mono font-medium bg-background/20 backdrop-blur-sm rounded-full text-background/90"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-display text-2xl md:text-3xl font-bold text-background">
-                    {project.title}
-                  </h3>
-                  <p className="text-background/80 text-sm font-medium">
-                    {project.subtitle}
-                  </p>
-
-                  {/* Description */}
-                  <p className="text-background/70 text-sm leading-relaxed max-w-md">
-                    {project.description}
-                  </p>
-                </div>
+              {/* Links */}
+              <div className="flex items-center gap-4">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors"
+                >
+                  <Github className="w-4 h-4" />
+                  Code
+                </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Demo
+                  </a>
+                )}
               </div>
-
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-background/5 pointer-events-none" />
-              <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-background/5 pointer-events-none" />
             </div>
           ))}
         </div>
