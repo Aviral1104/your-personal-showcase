@@ -3,10 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
+  { label: "Work", href: "#projects" },
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -32,7 +31,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-md"
+          ? "bg-background/80 backdrop-blur-xl border-b border-border"
           : "bg-transparent"
       }`}
     >
@@ -41,7 +40,7 @@ const Navbar = () => {
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="font-serif text-xl font-bold text-foreground hover:text-primary transition-colors"
+            className="w-10 h-10 rounded-xl bg-foreground flex items-center justify-center text-background font-display text-sm font-bold hover:scale-105 transition-transform"
           >
             AA
           </button>
@@ -52,7 +51,7 @@ const Navbar = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary"
               >
                 {item.label}
               </button>
@@ -72,13 +71,13 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-2">
+          <div className="md:hidden py-4 border-t border-border bg-background/95 backdrop-blur-xl">
+            <div className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="px-4 py-3 text-left text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                  className="px-4 py-3 text-left text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors"
                 >
                   {item.label}
                 </button>
