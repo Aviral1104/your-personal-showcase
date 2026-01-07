@@ -61,9 +61,9 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24 bg-background relative">
+    <section className="py-24 relative">
       {/* Background */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}

@@ -29,9 +29,9 @@ const articles = [
 
 const ArticlesSection = () => {
   return (
-    <section id="articles" className="py-24 bg-background relative">
+    <section className="py-24 relative">
       {/* Background Glow */}
-      <div className="absolute inset-0 bg-gradient-glow opacity-50" />
+      <div className="absolute inset-0 bg-gradient-glow opacity-30" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}

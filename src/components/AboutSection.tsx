@@ -1,6 +1,6 @@
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-card/50 border-y border-border relative">
+    <section className="py-24 bg-card/30 backdrop-blur-sm border-y border-border/50 relative">
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/5 blur-[120px] rounded-full" />
 
