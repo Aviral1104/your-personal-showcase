@@ -1,22 +1,37 @@
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 
-const glowColors = [
-  "hover:shadow-[0_0_30px_rgba(139,92,246,0.3)]", // purple
-  "hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]",  // cyan
-  "hover:shadow-[0_0_30px_rgba(236,72,153,0.3)]", // pink
-  "hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]",  // green
-  "hover:shadow-[0_0_30px_rgba(249,115,22,0.3)]", // orange
-  "hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]", // blue
-];
-
-const borderColors = [
-  "hover:border-violet-500/50",
-  "hover:border-cyan-500/50",
-  "hover:border-pink-500/50",
-  "hover:border-green-500/50",
-  "hover:border-orange-500/50",
-  "hover:border-blue-500/50",
+const cardStyles = [
+  {
+    glow: "hover:shadow-[0_0_30px_rgba(139,92,246,0.3)]",
+    border: "hover:border-violet-500/50",
+    text: "group-hover:text-violet-400",
+  },
+  {
+    glow: "hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]",
+    border: "hover:border-cyan-500/50",
+    text: "group-hover:text-cyan-400",
+  },
+  {
+    glow: "hover:shadow-[0_0_30px_rgba(236,72,153,0.3)]",
+    border: "hover:border-pink-500/50",
+    text: "group-hover:text-pink-400",
+  },
+  {
+    glow: "hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]",
+    border: "hover:border-green-500/50",
+    text: "group-hover:text-green-400",
+  },
+  {
+    glow: "hover:shadow-[0_0_30px_rgba(249,115,22,0.3)]",
+    border: "hover:border-orange-500/50",
+    text: "group-hover:text-orange-400",
+  },
+  {
+    glow: "hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]",
+    border: "hover:border-blue-500/50",
+    text: "group-hover:text-blue-400",
+  },
 ];
 
 const projects = [
@@ -78,15 +93,17 @@ const ProjectsSection = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className={`group p-6 rounded-xl bg-card border border-border transition-all duration-500 hover:-translate-y-2 ${glowColors[index % glowColors.length]} ${borderColors[index % borderColors.length]}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <h3 className="font-display text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                {project.title}
-              </h3>
+          {projects.map((project, index) => {
+            const style = cardStyles[index % cardStyles.length];
+            return (
+              <div
+                key={index}
+                className={`group p-6 rounded-xl bg-card border border-border transition-all duration-500 hover:-translate-y-2 ${style.glow} ${style.border}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <h3 className={`font-display text-lg font-semibold text-foreground mb-3 transition-colors duration-300 ${style.text}`}>
+                  {project.title}
+                </h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                 {project.description}
               </p>
@@ -128,7 +145,8 @@ const ProjectsSection = () => {
                 )}
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
