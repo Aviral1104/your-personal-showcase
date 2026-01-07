@@ -25,13 +25,10 @@ const HeroSection = () => {
             Machine Learning Engineer
           </p>
 
-          {/* Name with mixed fonts */}
+          {/* Name */}
           <h1 className="mb-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-            <span className="block font-['Playfair_Display'] text-5xl md:text-7xl lg:text-8xl font-medium text-foreground mb-2">
-              Aviral
-            </span>
-            <span className="block font-display text-6xl md:text-8xl lg:text-9xl font-bold text-gradient-cyan-purple">
-              Asthana
+            <span className="block font-['Playfair_Display'] text-6xl md:text-8xl lg:text-9xl font-bold text-foreground tracking-tight">
+              Aviral Asthana
             </span>
           </h1>
 
@@ -45,8 +42,8 @@ const HeroSection = () => {
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             Building systems that survive{" "}
-            <span className="text-foreground font-medium">reality</span>
-            {" "}— not demos that survive{" "}
+            <span className="text-foreground font-medium">reality</span>,
+            {" "}not demos that survive{" "}
             <span className="text-muted-foreground/60 italic">notebooks</span>.
           </p>
 
