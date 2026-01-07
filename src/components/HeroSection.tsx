@@ -67,7 +67,7 @@ const HeroSection = () => {
           {/* Social Links */}
           <div className="flex items-center justify-center gap-6 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <a
-              href="https://linkedin.com/in/aviral-asthana-4393b4234"
+              href="https://www.linkedin.com/in/aviral-asthana-4393b4234/"
               target="_blank"
               rel="noopener noreferrer"
               className="group p-3 text-muted-foreground hover:text-primary transition-all duration-300 relative"

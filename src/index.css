@@ -60,6 +60,55 @@
     --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   }
+
+  .light {
+    --background: 200 30% 98%;
+    --foreground: 220 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
+
+    --primary: 260 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 20% 92%;
+    --secondary-foreground: 220 25% 25%;
+
+    --muted: 200 15% 90%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 340 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 200 20% 85%;
+    --input: 200 20% 85%;
+    --ring: 260 85% 55%;
+
+    --glow-cyan: 200 90% 50%;
+    --glow-purple: 280 85% 60%;
+    --glow-pink: 340 80% 55%;
+
+    --sidebar-background: 200 25% 96%;
+    --sidebar-foreground: 220 25% 15%;
+    --sidebar-primary: 260 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 340 80% 55%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 200 20% 85%;
+    --sidebar-ring: 260 85% 55%;
+
+    --chart-1: 260 85% 55%;
+    --chart-2: 340 80% 55%;
+    --chart-3: 200 90% 50%;
+    --chart-4: 45 100% 55%;
+    --chart-5: 160 70% 45%;
+  }
 }
 
 @layer base {
