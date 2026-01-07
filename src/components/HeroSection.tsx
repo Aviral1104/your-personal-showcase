@@ -11,71 +11,101 @@ const HeroSection = () => {
       {/* Subtle overlay for hero content readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background/40" />
 
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-10 w-px h-32 bg-gradient-to-b from-transparent via-primary/50 to-transparent hidden lg:block" />
+      <div className="absolute top-20 right-10 w-px h-32 bg-gradient-to-b from-transparent via-accent/50 to-transparent hidden lg:block" />
+      <div className="absolute bottom-40 left-20 w-24 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent hidden lg:block" />
+      <div className="absolute bottom-60 right-20 w-24 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent hidden lg:block" />
+
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="max-w-4xl">
-          {/* Name with Glow */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up">
-            <span className="text-gradient-cyan-purple opacity-90">Aviral Asthana</span>
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Greeting */}
+          <p className="font-mono text-sm md:text-base text-primary tracking-[0.3em] uppercase mb-6 animate-fade-in-up">
+            Machine Learning Engineer
+          </p>
+
+          {/* Name with mixed fonts */}
+          <h1 className="mb-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+            <span className="block font-['Playfair_Display'] text-5xl md:text-7xl lg:text-8xl font-medium text-foreground mb-2">
+              Aviral
+            </span>
+            <span className="block font-display text-6xl md:text-8xl lg:text-9xl font-bold text-gradient-cyan-purple">
+              Asthana
+            </span>
           </h1>
 
+          {/* Decorative line */}
+          <div className="flex items-center justify-center gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
+            <div className="w-12 h-px bg-gradient-to-r from-transparent to-primary/50" />
+            <div className="w-2 h-2 rounded-full bg-primary/50 animate-pulse" />
+            <div className="w-12 h-px bg-gradient-to-l from-transparent to-accent/50" />
+          </div>
+
           {/* Description */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-            I develop machine learning systems that prioritise robustness, latency and real-world performance over benchmark scores.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            Building systems that survive{" "}
+            <span className="text-foreground font-medium">reality</span>
+            {" "}— not demos that survive{" "}
+            <span className="text-muted-foreground/60 italic">notebooks</span>.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 mb-12 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
             <Button
               onClick={() => scrollToSection("projects")}
-              className="px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 border-glow-cyan"
+              className="px-8 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 border-glow-cyan"
             >
-              Selected Work
+              View Projects
             </Button>
             <Button
-              variant="ghost"
+              variant="outline"
               onClick={() => scrollToSection("contact")}
-              className="px-6 py-3 text-muted-foreground hover:text-foreground"
+              className="px-8 py-3 border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300"
             >
               Get in touch
             </Button>
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+          <div className="flex items-center justify-center gap-6 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <a
               href="https://linkedin.com/in/aviral-asthana-4393b4234"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
+              className="group p-3 text-muted-foreground hover:text-primary transition-all duration-300 relative"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5" />
+              <div className="absolute inset-0 rounded-full bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
+              <Linkedin className="w-5 h-5 relative z-10" />
             </a>
             <a
               href="https://twitter.com/actual_aviral"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
+              className="group p-3 text-muted-foreground hover:text-primary transition-all duration-300 relative"
               aria-label="Twitter"
             >
-              <Twitter className="w-5 h-5" />
+              <div className="absolute inset-0 rounded-full bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
+              <Twitter className="w-5 h-5 relative z-10" />
             </a>
             <a
               href="https://github.com/Aviral1104"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
+              className="group p-3 text-muted-foreground hover:text-primary transition-all duration-300 relative"
               aria-label="GitHub"
             >
-              <Github className="w-5 h-5" />
+              <div className="absolute inset-0 rounded-full bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
+              <Github className="w-5 h-5 relative z-10" />
             </a>
             <a
               href="mailto:asthana.aviral0902@gmail.com"
-              className="p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
+              className="group p-3 text-muted-foreground hover:text-primary transition-all duration-300 relative"
               aria-label="Email"
             >
-              <Mail className="w-5 h-5" />
+              <div className="absolute inset-0 rounded-full bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
+              <Mail className="w-5 h-5 relative z-10" />
             </a>
           </div>
         </div>
@@ -83,13 +113,15 @@ const HeroSection = () => {
         {/* Scroll Indicator */}
         <button
           onClick={() => scrollToSection("about")}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2 text-muted-foreground hover:text-primary transition-colors duration-300 animate-bounce"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300 group"
           aria-label="Scroll down"
         >
-          <ArrowDown className="w-5 h-5" />
+          <span className="text-xs font-mono tracking-widest uppercase opacity-50 group-hover:opacity-100 transition-opacity">
+            Scroll
+          </span>
+          <ArrowDown className="w-4 h-4 animate-bounce" />
         </button>
       </div>
-
     </section>
   );
 };
