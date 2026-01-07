@@ -1,8 +1,15 @@
 import { useParallax } from "@/hooks/useScrollAnimation";
+import { useTheme } from "@/hooks/useTheme";
 import spaceBackground from "@/assets/space-background.jpg";
+import LightModeBackground from "./LightModeBackground";
 
 const ParallaxBackground = () => {
   const scrollY = useParallax();
+  const { theme } = useTheme();
+
+  if (theme === "light") {
+    return <LightModeBackground />;
+  }
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">

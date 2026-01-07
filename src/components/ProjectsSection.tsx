@@ -42,6 +42,12 @@ const projects = [
     github: "https://github.com/Aviral1104/ASL-Gesture-Recognition-System",
   },
   {
+    title: "Frutipedia",
+    description: "An intelligent fruit recognition and information system powered by deep learning for identifying and providing nutritional information about fruits.",
+    tags: ["Deep Learning", "Image Classification", "Python"],
+    github: "https://github.com/Aviral1104/Frutipedia",
+  },
+  {
     title: "Reinforcement Learning in Action",
     description: "Task-based implementations of reinforcement learning algorithms ranging from classical methods to modern actor-critic architectures like DDPG and TD3.",
     tags: ["Reinforcement Learning", "DDPG", "TD3", "Gym"],
@@ -55,22 +61,16 @@ const projects = [
     demo: "https://drive.google.com/file/d/12hs2Fy9Sbx0MWycYCgU-UotIZaP0p5-c/view",
   },
   {
-    title: "DAWG: Stray Dog Detection",
-    description: "Enhanced YOLOv7 algorithm to detect stray dogs and relay information to the nearest Municipal Corporation for animal welfare management.",
-    tags: ["YOLOv7", "Computer Vision", "Python"],
-    github: "https://github.com/Aviral1104",
+    title: "Applied Machine Learning",
+    description: "In-depth notebooks exploring applied machine learning techniques with mathematical intuition and implementation details.",
+    tags: ["Machine Learning", "Jupyter", "Python"],
+    github: "https://github.com/Aviral1104/Applied-Machine-Learning",
   },
   {
     title: "Alzheimer's Detection using CNN",
     description: "Convolutional Neural Networks to detect Alzheimer's from brain X-rays, achieving high accuracy in early diagnosis for medical applications.",
     tags: ["CNN", "Medical AI", "TensorFlow"],
-    github: "https://github.com/Aviral1104",
-  },
-  {
-    title: "Applied Machine Learning",
-    description: "In-depth notebooks exploring applied machine learning techniques with mathematical intuition and implementation details.",
-    tags: ["Machine Learning", "Jupyter", "Python"],
-    github: "https://github.com/Aviral1104/Applied-Machine-Learning",
+    github: "https://github.com/Aviral1104/Alzheimer-s-Detection-using-CNN",
   },
 ];
 
