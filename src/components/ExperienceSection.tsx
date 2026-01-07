@@ -43,7 +43,7 @@ const certifications = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-24 bg-card/30 border-y border-border relative">
+    <section className="py-24 bg-card/20 backdrop-blur-sm border-y border-border/50 relative">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Experience */}

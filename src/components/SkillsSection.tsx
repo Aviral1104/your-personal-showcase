@@ -35,7 +35,7 @@ const skillCategories = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-24 bg-background relative">
+    <section className="py-24 relative">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="mb-16">

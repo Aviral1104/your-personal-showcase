@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowUpRight } from "lu
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 bg-background relative">
+    <section className="py-24 relative">
       {/* Background Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 blur-[150px] rounded-full" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-accent/5 blur-[120px] rounded-full" />

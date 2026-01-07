@@ -8,20 +8,35 @@ import SkillsSection from "@/components/SkillsSection";
 import ArticlesSection from "@/components/ArticlesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ParallaxBackground from "@/components/ParallaxBackground";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative">
+      <ParallaxBackground />
       <CustomCursor />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <HeroSection />
-        <AboutSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <ArticlesSection />
-        <ContactSection />
+        <AnimatedSection id="about" className="scroll-mt-20">
+          <AboutSection />
+        </AnimatedSection>
+        <AnimatedSection id="experience" delay={100} className="scroll-mt-20">
+          <ExperienceSection />
+        </AnimatedSection>
+        <AnimatedSection id="projects" delay={100} className="scroll-mt-20">
+          <ProjectsSection />
+        </AnimatedSection>
+        <AnimatedSection id="skills" delay={100} className="scroll-mt-20">
+          <SkillsSection />
+        </AnimatedSection>
+        <AnimatedSection id="articles" delay={100} className="scroll-mt-20">
+          <ArticlesSection />
+        </AnimatedSection>
+        <AnimatedSection id="contact" delay={100} className="scroll-mt-20">
+          <ContactSection />
+        </AnimatedSection>
       </main>
       <Footer />
     </div>
