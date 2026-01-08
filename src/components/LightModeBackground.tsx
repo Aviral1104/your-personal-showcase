@@ -1,4 +1,5 @@
 import { useParallax } from "@/hooks/useScrollAnimation";
+import FlyingBirds from "./FlyingBirds";
 
 const LightModeBackground = () => {
   const scrollY = useParallax();
@@ -148,6 +149,9 @@ const LightModeBackground = () => {
           transform: `translateY(${scrollY * 0.12}px)`,
         }}
       />
+
+      {/* Flying Birds */}
+      <FlyingBirds />
 
       {/* Bottom gradient for content readability */}
       <div
