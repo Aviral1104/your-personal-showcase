@@ -2,6 +2,7 @@ import { useParallax } from "@/hooks/useScrollAnimation";
 import { useTheme } from "@/hooks/useTheme";
 import spaceBackground from "@/assets/space-background.jpg";
 import LightModeBackground from "./LightModeBackground";
+import StarParticles from "./StarParticles";
 
 const ParallaxBackground = () => {
   const scrollY = useParallax();
@@ -21,6 +22,9 @@ const ParallaxBackground = () => {
           transform: `translateY(${scrollY * 0.3}px) scale(1.1)`,
         }}
       />
+
+      {/* Star Particles */}
+      <StarParticles />
 
       {/* Overlay gradients for smooth section transitions */}
       <div
