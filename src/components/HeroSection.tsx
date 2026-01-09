@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, ArrowDown, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -61,6 +61,16 @@ const HeroSection = () => {
               className="px-8 py-3 border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300"
             >
               Get in touch
+            </Button>
+            <Button
+              variant="outline"
+              asChild
+              className="px-8 py-3 border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300"
+            >
+              <a href="/Resume_Aviral_Asthana.pdf" download>
+                <Download className="w-4 h-4 mr-2" />
+                Resume
+              </a>
             </Button>
           </div>
 
