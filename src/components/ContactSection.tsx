@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowUpRight, Download } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -79,6 +79,15 @@ const ContactSection = () => {
                 <Github className="w-4 h-4" />
                 GitHub
                 <ArrowUpRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+              </Button>
+            </a>
+            <a href="/Resume_Aviral_Asthana.pdf" download>
+              <Button
+                variant="outline"
+                className="gap-2 border-border hover:border-primary hover:text-primary transition-all group"
+              >
+                <Download className="w-4 h-4" />
+                Resume
               </Button>
             </a>
             <a href="mailto:asthana.aviral0902@gmail.com">
